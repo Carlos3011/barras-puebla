@@ -40,7 +40,7 @@ export function FavoritesScreen() {
         let pubsArray = [];
         for await (const item of snapshot.docs) {
           const data = item.data();
-          const docRef = doc(db, "restaurants", data.idPub);
+          const docRef = doc(db, "pubs", data.idPub);
           const docSnap = await getDoc(docRef);
           const newData = docSnap.data();
           newData.idFavorite = data.id;
